@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130525162231) do
+ActiveRecord::Schema.define(:version => 20130525215644) do
+
+  create_table "schools", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.boolean  "gmaps",      :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  create_table "trips", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.date     "date_start"
+    t.date     "date_end"
+    t.text     "notes"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

@@ -7,7 +7,9 @@ XXXbelongs_to :user
 has_many :stops
 has_many :schools :through => :stops
 
--->School (drive a dropdown that will populate the stop)
+-->School (drive a dropdown that will populate the stop school selection)
+
+rails g scaffold School name:string location:string longitude:float latitude:float gmaps:boolean
 
 -->Stop
 belongs_to :trip

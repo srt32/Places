@@ -1,4 +1,7 @@
 Places::Application.routes.draw do
+  resources :schools
+
+
   devise_for :users #, :path => 'accounts'
 
   resources :users do
