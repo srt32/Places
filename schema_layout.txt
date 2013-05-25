@@ -1,17 +1,13 @@
 -->User -- DONE
--has_many :trips
+XXXhas_many :trips
 has_many :schools, :through => :stops
 
--->Trip
--belongs_to :user
+-->Trip -- DONE
+XXXbelongs_to :user
 has_many :stops
 has_many :schools :through => :stops
 
-rails g scaffold Trip user_id:integer name:string date_start:date date_end:date notes:text
-
-
-
--->School
+-->School (drive a dropdown that will populate the stop)
 
 -->Stop
 belongs_to :trip
