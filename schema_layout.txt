@@ -1,0 +1,27 @@
+-->User -- DONE
+-has_many :trips
+has_many :schools, :through => :stops
+
+-->Trip
+-belongs_to :user
+has_many :stops
+has_many :schools :through => :stops
+
+rails g scaffold Trip user_id:integer name:string date_start:date date_end:date notes:text
+
+
+
+-->School
+
+-->Stop
+belongs_to :trip
+belongs_to :school
+
+
+
+
+1. make User mode -- DONE
+2. make Trip mode
+3. associate User and Trip model
+4. make School model
+5. associate Trip and School model (using Stop join table?)
