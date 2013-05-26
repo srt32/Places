@@ -1,14 +1,13 @@
 Places::Application.routes.draw do
   resources :schools
 
-
   devise_for :users #, :path => 'accounts'
 
   resources :users do
     resources :trips
   end
 
-  root :to => 'trips#index'
+  root :to => 'users#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
