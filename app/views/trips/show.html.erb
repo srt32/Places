@@ -28,7 +28,7 @@
 <ol class="stops">
   <b>Stops</b>
   <% for stop in @trip.stops %>
-  <li><%= stop.school_id %></li>
+  <li><%= School.find_by_id(stop.school_id).name %></li>
   <% end %>
 </ol>
 
