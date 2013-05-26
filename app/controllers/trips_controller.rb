@@ -14,6 +14,7 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.json
   def show
+    @user = current_user
     @trip = Trip.find(params[:id])
 
     respond_to do |format|
@@ -27,6 +28,7 @@ class TripsController < ApplicationController
   def new
     @user = current_user
     @trip = Trip.new
+    3.times { @trip.stops.build }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,7 +38,7 @@ class TripsController < ApplicationController
 
   # GET /trips/1/edit
   def edit
-    @user = User.find(params[:user_id])
+    @user = current_user
     @trip = Trip.find(params[:id])
   end
 
@@ -60,11 +62,12 @@ class TripsController < ApplicationController
   # PUT /trips/1
   # PUT /trips/1.json
   def update
+    @user = current_user
     @trip = Trip.find(params[:id])
 
     respond_to do |format|
       if @trip.update_attributes(params[:trip])
-        format.html { redirect_to @trip, notice: 'Trip was successfully updated.' }
+        format.html { redirect_to user_trip_path(@trip), notice: 'Trip was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

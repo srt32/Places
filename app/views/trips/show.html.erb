@@ -25,6 +25,14 @@
   <%= @trip.notes %>
 </p>
 
+<ol class="stops">
+  <b>Stops</b>
+  <% for stop in @trip.stops %>
+  <li><%= stop.school_id %></li>
+  <% end %>
+</ol>
 
-<%= link_to 'Edit', edit_user_trip_path(@trip) %> |
+
+
+<%= link_to 'Edit', edit_user_trip_path(@user,@trip) %> |
 <%= link_to 'Back', user_trips_path %>
