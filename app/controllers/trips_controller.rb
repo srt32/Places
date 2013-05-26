@@ -36,6 +36,7 @@ class TripsController < ApplicationController
 
   # GET /trips/1/edit
   def edit
+    @user = User.find(params[:user_id])
     @trip = Trip.find(params[:id])
   end
 
