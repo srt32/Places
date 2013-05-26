@@ -25,12 +25,12 @@
   </div>
   <div class="field">
     <%= f.label :notes %><br />
-    <%= f.text_area :notes %>
+    <%= f.text_field :notes %>
   </div>
 
   <%= f.fields_for :stops do |builder| %>
   <div class="stops">
-    <%= builder.label :school_id, "School - needs to turn into dropdown" %><br />
+    <%= builder.label :school_id, "School" %>
     <%= builder.collection_select(:school_id, School.order("name").all, :id, :name, {:include_blank => 'Choose a school'}) %>
     <%= builder.check_box :_destroy %>
     <%= builder.label :_destroy, "Remove Stop" %>
