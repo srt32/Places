@@ -20,14 +20,25 @@
   <%= @trip.notes %>
 </p>
 
-<ol class="stops">
-  <b>Stops</b>
-  <% for stop in @trip.stops %>
-  <li><%= School.find_by_id(stop.school_id).name %></li>
-  <% end %>
-</ol>
+<div class="stops">
+  <h1>Stops</h1>
+  <table>
+    <tr>  
+      <th></th>
+      <th></th>
+    </tr>
+    <% for stop in @trip.stops %>
+    <tr>
+      <td><%= stop.school.name %></td>
+      <td><a href=<%= get_yelp_restaurants(stop.school) %> target="_blank">Restaurants</a></td>
+    </tr>
+    <% end %>
+  </table>
+</div><br />
 
 <%= link_to 'Edit', edit_user_trip_path(@user,@trip) %> |
 <%= link_to 'Back', user_trips_path %>
 
-<%= gmaps4rails(@json) %>
+<div>
+  <%= gmaps4rails(@json) %>
+</div>

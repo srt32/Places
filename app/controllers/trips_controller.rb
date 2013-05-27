@@ -1,4 +1,6 @@
 class TripsController < ApplicationController
+  include ControllerYelp
+
   # GET /trips
   # GET /trips.json
   def index
@@ -18,7 +20,6 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @schools = @trip.schools
     @json = @schools.to_gmaps4rails
-    # NEED TO ADD HERE, SOMETHING LIKE TRIP.SCHOOLS.TO_GMAPS
 
     respond_to do |format|
       format.html # show.html.erb

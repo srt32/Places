@@ -1,4 +1,6 @@
 class SchoolsController < ApplicationController
+  include ControllerYelp
+
   # GET /schools
   # GET /schools.json
   def index
