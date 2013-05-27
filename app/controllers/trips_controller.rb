@@ -16,6 +16,8 @@ class TripsController < ApplicationController
   def show
     @user = current_user
     @trip = Trip.find(params[:id])
+    @schools = @trip.schools
+    @json = @schools.to_gmaps4rails
     # NEED TO ADD HERE, SOMETHING LIKE TRIP.SCHOOLS.TO_GMAPS
 
     respond_to do |format|
