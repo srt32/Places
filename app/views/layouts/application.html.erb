@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<%= yield :scripts %> 
 	<%= render 'layouts/navbar' %>	
 
 	<p class="alert"><%= alert %></p>
