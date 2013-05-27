@@ -11,7 +11,9 @@
 
       <ul class="nav pull-right">
         <% if current_user %>
-          <li><%= link_to current_user.email, user_path(current_user) %></li> 
+          <li><%= link_to "Schools", schools_path %> </li> 
+          <li><%= link_to "My Trips", user_trips_path(current_user) %></li>
+          <li><%= link_to "Account", edit_user_registration_path(current_user) %></li>
           <li><%= link_to "Sign out",  destroy_user_session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to "Sign in", new_user_session_path %></li>
