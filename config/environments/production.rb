@@ -9,8 +9,7 @@ Places::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
-  # set back to false
+  config.serve_static_assets = true
   # updated from http://stackoverflow.com/questions/7155053/gmaps4rails-not-showing-in-production
   # because gmaps were blank on prod
 
@@ -49,7 +48,7 @@ Places::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w[gmaps4rails.css]
+  config.assets.precompile += %w[gmaps4rails.css *.js]
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
