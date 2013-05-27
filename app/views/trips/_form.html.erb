@@ -33,7 +33,7 @@
     <%= builder.label :school_id, "School" %>
     <%= builder.collection_select(:school_id, School.order("name").all, :id, :name, {:include_blank => 'Choose a school'}) %>
     <%= builder.check_box :_destroy %>
-    <%= builder.label :_destroy, "Remove Stop" %>
+    <%= builder.label :_destroy, "Remove Stop", :id=>"checkbox" %>
   </div>
   <% end %>
 

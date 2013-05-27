@@ -19,3 +19,7 @@ body {
 	padding-left: 50px;
 	padding-right: 50px;
 }
+
+#checkbox {
+	display:inline-block;
+}
