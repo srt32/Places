@@ -3,6 +3,7 @@ class SchoolsController < ApplicationController
   # GET /schools.json
   def index
     @schools = School.all
+    @json = @schools.to_gmaps4rails
 
     respond_to do |format|
       format.html # index.html.erb
