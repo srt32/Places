@@ -1,4 +1,8 @@
 Places::Application.routes.draw do
+  get "pages/about"
+
+  get "pages/contact"
+
   resources :schools
   
   devise_for :users #, :path => 'accounts'
