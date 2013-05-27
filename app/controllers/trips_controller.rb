@@ -16,6 +16,7 @@ class TripsController < ApplicationController
   def show
     @user = current_user
     @trip = Trip.find(params[:id])
+    # NEED TO ADD HERE, SOMETHING LIKE TRIP.SCHOOLS.TO_GMAPS
 
     respond_to do |format|
       format.html # show.html.erb
