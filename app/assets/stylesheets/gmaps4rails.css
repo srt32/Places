@@ -9,6 +9,9 @@
   width: 800px;
 }
 
+.map_container img{max-width: none;}
+/* per https://github.com/apneadiving/Google-Maps-for-Rails/wiki/Google-Maps-with-Twitter-Bootstrap-or-Zurb-Foundation*/
+
 .gmaps4rails_map {
   width: 800px;
   height: 400px;
