@@ -26,11 +26,13 @@
     <tr>  
       <th></th>
       <th></th>
+      <th></th>
     </tr>
     <% for stop in @trip.stops %>
     <tr>
-      <td><%= stop.school.name %></td>
-      <td><a href=<%= get_yelp_restaurants('Restaurants',stop.school) %> target="_blank">Restaurants</a></td>
+      <td><%= link_to stop.school.name, school_path(stop.school) %> </td>
+      <td><a href=<%= get_yelp_search('Restaurants',stop.school) %> target="_blank">| Restaurants |</a></td>
+      <td><a href=<%= get_yelp_search('Hotels',stop.school) %> target="_blank">Hotels</a></td>
     </tr>
     <% end %>
   </table>
