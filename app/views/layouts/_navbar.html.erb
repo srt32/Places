@@ -7,11 +7,11 @@
         </li>
         <li><%= link_to "About", pages_about_path %></li>
         <li><%= link_to "Contact", pages_contact_path %></li>
+        <li><%= link_to "Schools", schools_path %> </li> 
       </ul>
 
       <ul class="nav pull-right">
         <% if current_user %>
-          <li><%= link_to "Schools", schools_path %> </li> 
           <li><%= link_to "My Trips", user_trips_path(current_user) %></li>
           <li><%= link_to "Account", edit_user_registration_path(current_user) %></li>
           <li><%= button_to('Sign out', destroy_user_session_path, :method => :delete) %><li>
