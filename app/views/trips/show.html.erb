@@ -27,12 +27,17 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
     <% for stop in @trip.stops %>
     <tr>
       <td><%= link_to stop.school.name, school_path(stop.school) %> </td>
       <td><a href=<%= get_yelp_search('Restaurants',stop.school) %> target="_blank">| Restaurants |</a></td>
       <td><a href=<%= get_yelp_search('Hotels',stop.school) %> target="_blank">Hotels</a></td>
+      <% if defined? school0 %>
+        <td><%= get_gmaps_directions(school0,stop.school.name) %></td>
+      <% end %>
+      <% school0 = stop.school.name %> <!-- this line does not work -->
     </tr>
     <% end %>
   </table>
