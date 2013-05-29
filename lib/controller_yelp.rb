@@ -3,8 +3,9 @@ module ControllerYelp
 		controller.send :helper_method, :get_yelp_restaurants
 	end
 
-	def get_yelp_restaurants(school)
-    @name = school.name
-    link = "http://www.yelp.com/search?find_desc=restaurant&find_loc=" + @name
+	def get_yelp_restaurants(searchType,school)
+    @name_raw = school.name
+    @name = @name_raw.gsub(/[ ]/, '+')
+    link = "http://www.yelp.com/search?find_desc=" + searchType + "&find_loc=" + @name
   end
 end
