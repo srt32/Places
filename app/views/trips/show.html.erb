@@ -11,8 +11,10 @@
   <b>End: </b>
   <%= @trip.date_end.strftime("%B %d, %Y") %>
 
-  <b>Notes:</b>
-  <%= @trip.notes %>
+  <% unless @trip.notes.empty? %>
+    <b>Notes:</b>
+    <%= @trip.notes %>
+  <% end %>
 </p>
 
 <br />
@@ -28,7 +30,7 @@
     <tr>
       <td><h3><%= link_to stop.school.name, school_path(stop.school) %></h3></td>
       <td><a href=<%= get_yelp_search('Restaurants',stop.school) %> target="_blank"><img src="/images/yelp_logo.png" alt="Yelp logo" width="66.66" height="50"></a></td>
-      <td><a href=<%= get_yelp_search('Hotels',stop.school) %> target="_blank"> | Hotels | </a></td>
+      <td><a href=<%= get_yelp_search('Hotels',stop.school) %> target="_blank"><img src="/images/bed_hotel_logo.png" alt="hotel bed" width="55" height="55"></a></td>
       <% if @school0 %>
         <td><a href=<%= get_gmaps_directions(@school0,stop.school.name) %> target="_blank">
           <img src="/images/Google-Maps-Logo.png" alt="GMaps logo" width="50" height="50"></a></td>
