@@ -10,7 +10,16 @@ module ControllerYelp
   end
 
   def get_gmaps_directions(school0,school1)
-  	school0.to_s + school1.to_s
+  	school0plus = school0.gsub(/[ ]/, '+')
+  	school1plus = school1.gsub(/[ ]/, '+')
+  	school0 = school0plus + "+" + "admissions"
+  	school1 = school1plus + "+" + "admissions"
+  	urlBase = "https://maps.google.com/maps?saddr="
+  	url = 
+  		urlBase + 
+  		school0 + 
+  		"&daddr=" +
+  		school1 
   end
 
 end

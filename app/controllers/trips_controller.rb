@@ -20,6 +20,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @schools = @trip.schools
     @json = @schools.to_gmaps4rails
+    @school0 = nil
 
     respond_to do |format|
       format.html # show.html.erb
