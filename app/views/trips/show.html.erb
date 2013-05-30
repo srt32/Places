@@ -2,6 +2,7 @@
 
 <p>
   <h1><%= @trip.name %></h1>
+  <%= button_to 'Edit trip', edit_user_trip_path(@user,@trip) %>
 </p>
 
 <p>
@@ -35,9 +36,6 @@
     <% end %>
   </table>
 </div><br />
-
-<%= link_to 'Edit', edit_user_trip_path(@user,@trip) %> |
-<%= link_to 'Back', user_trips_path %>
 
 <div>
   <%= gmaps4rails(@json) %>
