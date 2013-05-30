@@ -1,4 +1,4 @@
-<h1>Listing trips</h1>
+<h1>My Trips <%= button_to 'Add a trip', new_user_trip_path, :method => :get %></h1>
 
 <table>
   <tr>
@@ -8,17 +8,15 @@
     <th>Notes</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @trips.each do |trip| %>
   <tr>
     <td><%= trip.name %></td>
-    <td><%= trip.date_start %></td>
-    <td><%= trip.date_end %></td>
+    <td><%= trip.date_start.strftime("%B %d, %Y") %></td>
+    <td><%= trip.date_end.strftime("%B %d, %Y") %></td>
     <td><%= trip.notes %></td>
     <td><%= link_to 'Show', user_trip_path(@user, trip) %></td>
-    <td><%= link_to 'Edit', edit_user_trip_path(@user, trip) %></td>
     <td><%= link_to 'Destroy', user_trip_path(@user, trip), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
@@ -26,4 +24,4 @@
 
 <br />
 
-<%= link_to 'New Trip', new_user_trip_path %>
+

@@ -1,27 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @trip.name %>
+  <h1><%= @trip.name %></h1>
 </p>
 
 <p>
-  <b>Date start:</b>
-  <%= @trip.date_start %>
-</p>
+  <b>Start: </b>
+  <%= @trip.date_start.strftime("%B %d, %Y") %>
 
-<p>
-  <b>Date end:</b>
-  <%= @trip.date_end %>
-</p>
+  <b>End: </b>
+  <%= @trip.date_end.strftime("%B %d, %Y") %>
 
-<p>
   <b>Notes:</b>
   <%= @trip.notes %>
 </p>
 
+<br />
 <div class="stops">
-  <h1>Stops</h1>
   <table>
     <tr>  
       <th></th>
@@ -31,9 +26,9 @@
     </tr>
     <% for stop in @trip.stops %>
     <tr>
-      <td><%= link_to stop.school.name, school_path(stop.school) %></td>
-      <td><a href=<%= get_yelp_search('Restaurants',stop.school) %> target="_blank"> | Restaurants</a></td>
-      <td><a href=<%= get_yelp_search('Hotels',stop.school) %> target="_blank"> | Hotels</a></td>
+      <td><h3><%= link_to stop.school.name, school_path(stop.school) %></h3></td>
+      <td><a href=<%= get_yelp_search('Restaurants',stop.school) %> target="_blank"> | Restaurants </a></td>
+      <td><a href=<%= get_yelp_search('Hotels',stop.school) %> target="_blank"> | Hotels </a></td>
       <% if @school0 %>
         <td><a href=<%= get_gmaps_directions(@school0,stop.school.name) %> target="_blank"> | Directions</a></td>
       <% end %>

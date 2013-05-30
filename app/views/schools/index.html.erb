@@ -1,12 +1,9 @@
-<h1>Listing schools</h1>
+<h1>Schools</h1>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Location</th>
-    <th>Longitude</th>
-    <th>Latitude</th>
-    <th>Gmaps</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,9 +13,6 @@
   <tr>
     <td><%= school.name %></td>
     <td><%= school.location %></td>
-    <td><%= school.longitude %></td>
-    <td><%= school.latitude %></td>
-    <td><%= school.gmaps %></td>
     <td><%= link_to 'Show', school %></td>
     <td><%= link_to 'Edit', edit_school_path(school) %></td>
     <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
