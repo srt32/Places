@@ -19,3 +19,8 @@
 
 //= require gmaps4rails/gmaps4rails.googlemaps
 //= require gmaps4rails/gmaps4rails.base
+
+function remove_fields (link) {
+	$(link).prev("input[type=hidden]").val("1");
+	$(link).closest(".fields").hide();
+}
