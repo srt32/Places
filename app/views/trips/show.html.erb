@@ -2,7 +2,7 @@
 
 <p>
   <h1><%= @trip.name %></h1>
-  <%= button_to 'Edit trip', edit_user_trip_path(@user,@trip) %>
+  <%= button_to 'Edit trip', edit_user_trip_path(@user,@trip), :method => :get %>
 </p>
 
 <p>

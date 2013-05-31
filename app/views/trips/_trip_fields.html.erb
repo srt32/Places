@@ -1,0 +1,4 @@
+<%= f.label :school_id, "School" %>
+<%= f.collection_select(:school_id, School.order("name").all, :id, :name, {:include_blank => 'Choose a school'}) %>
+<%= f.check_box :_destroy %>
+<%= f.label :_destroy, "Remove Stop", :id=>"checkbox" %>
