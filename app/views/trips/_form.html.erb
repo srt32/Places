@@ -29,10 +29,11 @@
   </div>
 
   <%= f.fields_for :stops do |builder| %>
-  <div class="stops">
-    <%= render 'trips/trip_fields', :f => builder %>
-  </div>
+    <div class="stops">
+      <%= render 'trips/stop_fields', :f => builder %>
+    </div>
   <% end %>
+  <p><%= link_to_add_fields "Add another stop", f, :stops %></p>
 
   <div class="actions">
     <%= f.submit %>
