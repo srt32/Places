@@ -5,6 +5,8 @@ class School < ActiveRecord::Base
   has_many :stops, :dependent => :destroy
   has_many :trips, :through => :stops
 
+  has_many :holidays, :dependent => :destroy
+
   acts_as_gmappable
   def gmaps4rails_address
   	"#{self.name}, #{self.location}"

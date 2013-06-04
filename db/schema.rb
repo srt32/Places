@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130526154137) do
+ActiveRecord::Schema.define(:version => 20130604003056) do
+
+  create_table "holidays", :force => true do |t|
+    t.integer  "school_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "notes"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "schools", :force => true do |t|
     t.string   "name"

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>School:</b>
+  <%= @holiday.school_id %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @holiday.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @holiday.end_date %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @holiday.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_school_holiday_path(@school, @holiday) %> |
+<%= link_to 'Back', schools_holidays_path %>

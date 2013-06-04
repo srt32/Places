@@ -3,7 +3,9 @@ Places::Application.routes.draw do
 
   get "pages/contact"
 
-  resources :schools
+  resources :schools do
+    resources :holidays
+  end
   
   devise_for :users #, :path => 'accounts'
 
