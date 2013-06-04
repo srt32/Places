@@ -3,20 +3,39 @@ module CampusCalendar
 		controller.send :helper_method, :isSchoolOpen, :travelDates, :schoolDates
 	end
 
-	def isSchoolOpen(trip,school)
-		return true
-		# need to get the days where the school is closed
-		# then match on travelDates. 
-		# if match, provide false
+	def isSchoolOpen(trip,stop)
+		# need to get the days where the school is closed --> schoolDates(school)
+		# get travel dates --> travelDates(trip)
+		# is there a match?
+		# travelDates(trip) --> travelDays
+		# schoolDates(school) --> closedDays
+		travelDays = travelDates(trip)
+		closedDays = schoolDates(stop)
+		overlap = travelDays & closedDays
+		overlap.count > 0 ? "CLOSED" : "FALSE"
 	end
 
-	def schoolDates(school)
+	def schoolDates(stop)
 		# need to get the dates when school is closed
-		closedDates = 
+		# closedDays = # make an array of all the closed dates (school.holidays)
+		@school = stop.school
+		holidays = @school.holidays
+		closedDays = []
+		holidays.each do |h|
+			h_start = h.start_date
+			h_end = h.end_date
+			closedDays = (h_start..h_end).to_a
+		end
+		return closedDays
 	end
 
 	def travelDates(trip)
-    	# need to get the dates included in the trips
-    	travelDays = # days between trip.date_start and trip.date_end
-  	end
+    # need to get the dates included in the trips
+    trip = @trip
+    trip_start = trip.date_start
+    trip_end = trip.date_end
+    # travelDays = []
+    travelDays = (trip_start..trip_end).to_a
+   	return travelDays
+  end
 end
