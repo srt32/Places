@@ -12,7 +12,7 @@ module CampusCalendar
 		travelDays = travelDates(trip)
 		closedDays = schoolDates(stop)
 		overlap = travelDays & closedDays
-		overlap.count > 0 ? "CLOSED" : "FALSE"
+		overlap.count > 0 ? "CLOSED" + overlap.to_s : "OPEN"
 	end
 
 	def schoolDates(stop)
