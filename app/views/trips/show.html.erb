@@ -21,6 +21,12 @@
 <br />
 <div class="stops">
   <table class="table">
+    <tr>
+      <th>School</th>
+      <th>Tours?</th>
+      <th>School open?</th>
+      <th>Plan here!</th>
+    </tr>
     <% for stop in @trip.stops %>
     <tr>
       <td><h3><%= link_to stop.school.name, school_path(stop.school) %></h3></td>
