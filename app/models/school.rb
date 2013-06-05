@@ -4,8 +4,8 @@ class School < ActiveRecord::Base
   attr_accessible :gmaps, :latitude, :location, :longitude, :name
   has_many :stops, :dependent => :destroy
   has_many :trips, :through => :stops
-
   has_many :holidays, :dependent => :destroy
+  has_many :tours, :dependent => :destroy
 
   geocoded_by :schoolNameLocation
   after_validation :geocode, :if => :location_changed?

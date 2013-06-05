@@ -5,6 +5,7 @@ Places::Application.routes.draw do
 
   resources :schools do
     resources :holidays
+    resources :tours
   end
   
   devise_for :users #, :path => 'accounts'

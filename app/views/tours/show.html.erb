@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>School:</b>
+  <%= @tour.school_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @tour.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @tour.description %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%= @tour.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%= @tour.end_time %>
+</p>
+
+<p>
+  <b>M:</b>
+  <%= @tour.m %>
+</p>
+
+<p>
+  <b>T:</b>
+  <%= @tour.t %>
+</p>
+
+<p>
+  <b>W:</b>
+  <%= @tour.w %>
+</p>
+
+<p>
+  <b>R:</b>
+  <%= @tour.r %>
+</p>
+
+<p>
+  <b>F:</b>
+  <%= @tour.f %>
+</p>
+
+<p>
+  <b>Sa:</b>
+  <%= @tour.sa %>
+</p>
+
+<p>
+  <b>Su:</b>
+  <%= @tour.su %>
+</p>
+
+
+<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<%= link_to 'Back', tours_path %>

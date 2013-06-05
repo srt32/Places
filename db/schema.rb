@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604003056) do
+ActiveRecord::Schema.define(:version => 20130605021005) do
 
   create_table "holidays", :force => true do |t|
     t.integer  "school_id"
@@ -37,6 +37,23 @@ ActiveRecord::Schema.define(:version => 20130604003056) do
     t.integer  "school_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tours", :force => true do |t|
+    t.integer  "school_id"
+    t.string   "name"
+    t.text     "description"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.boolean  "m"
+    t.boolean  "t"
+    t.boolean  "w"
+    t.boolean  "r"
+    t.boolean  "f"
+    t.boolean  "sa"
+    t.boolean  "su"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "trips", :force => true do |t|
