@@ -1,6 +1,7 @@
 class TripsController < ApplicationController
   include ControllerYelp
   include CampusCalendar
+  include TourSchedule
 
   # GET /trips
   # GET /trips.json

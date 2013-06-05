@@ -4,11 +4,6 @@ module CampusCalendar
 	end
 
 	def isSchoolOpen(trip,stop)
-		# need to get the days where the school is closed --> schoolDates(school)
-		# get travel dates --> travelDates(trip)
-		# is there a match?
-		# travelDates(trip) --> travelDays
-		# schoolDates(school) --> closedDays
 		travelDays = travelDates(trip)
 		closedDays = schoolDates(stop)
 		overlap = travelDays & closedDays
@@ -16,8 +11,6 @@ module CampusCalendar
 	end
 
 	def schoolDates(stop)
-		# need to get the dates when school is closed
-		# closedDays = # make an array of all the closed dates (school.holidays)
 		@school = stop.school
 		holidays = @school.holidays
 		closedDays = []
@@ -30,12 +23,10 @@ module CampusCalendar
 	end
 
 	def travelDates(trip)
-    # need to get the dates included in the trips
-    trip = @trip
-    trip_start = trip.date_start
-    trip_end = trip.date_end
-    # travelDays = []
-    travelDays = (trip_start..trip_end).to_a
-   	return travelDays
-  end
+	    trip = @trip
+	    trip_start = trip.date_start
+	    trip_end = trip.date_end
+	    travelDays = (trip_start..trip_end).to_a
+	   	return travelDays
+  	end
 end
