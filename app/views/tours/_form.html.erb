@@ -1,4 +1,4 @@
-<%= form_for(@tour) do |f| %>
+<%= form_for([@school, @tour]) do |f| %>
   <% if @tour.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
@@ -10,11 +10,7 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :school_id %><br />
-    <%= f.number_field :school_id %>
-  </div>
+  
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -31,6 +27,7 @@
     <%= f.label :end_time %><br />
     <%= f.time_select :end_time %>
   </div>
+  <h2>Repeats every</h2>
   <div class="field">
     <%= f.label :m %><br />
     <%= f.check_box :m %>

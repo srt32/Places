@@ -2,7 +2,8 @@ class ToursController < ApplicationController
   # GET /tours
   # GET /tours.json
   def index
-    @tours = Tour.all
+    @school = School.find(params[:school_id])
+    @tours = @school.tours.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,6 +14,7 @@ class ToursController < ApplicationController
   # GET /tours/1
   # GET /tours/1.json
   def show
+    @school = School.find(params[:school_id])
     @tour = Tour.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +26,7 @@ class ToursController < ApplicationController
   # GET /tours/new
   # GET /tours/new.json
   def new
+    @school = School.find(params[:school_id])
     @tour = Tour.new
 
     respond_to do |format|
@@ -40,11 +43,12 @@ class ToursController < ApplicationController
   # POST /tours
   # POST /tours.json
   def create
-    @tour = Tour.new(params[:tour])
+    @school = School.find(params[:school_id])
+    @tour = @school.tours.new(params[:tour])
 
     respond_to do |format|
       if @tour.save
-        format.html { redirect_to @tour, notice: 'Tour was successfully created.' }
+        format.html { redirect_to school_tour_path(@school, @tour), notice: 'Tour was successfully created.' }
         format.json { render json: @tour, status: :created, location: @tour }
       else
         format.html { render action: "new" }
@@ -60,7 +64,7 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.update_attributes(params[:tour])
-        format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }
+        format.html { redirect_to school_tour_path(@tour), notice: 'Tour was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +80,7 @@ class ToursController < ApplicationController
     @tour.destroy
 
     respond_to do |format|
-      format.html { redirect_to tours_url }
+      format.html { redirect_to school_tours_path }
       format.json { head :no_content }
     end
   end
