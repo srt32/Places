@@ -7,8 +7,16 @@ class School < ActiveRecord::Base
 
   has_many :holidays, :dependent => :destroy
 
+  geocoded_by :schoolNameLocation
+  after_validation :geocode, :if => :location_changed?
+
   acts_as_gmappable
+
   def gmaps4rails_address
+  	"#{self.schoolNameLocation}"
+  end
+
+  def schoolNameLocation
   	"#{self.name}, #{self.location}"
   end
 end
