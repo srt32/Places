@@ -5,7 +5,6 @@
     <th>Name</th>
     <th>Date start</th>
     <th>Date end</th>
-    <th>Notes</th>
     <th></th>
   </tr>
 
@@ -14,7 +13,6 @@
     <td><strong><%= link_to trip.name, user_trip_path(@user, trip) %></strong></td>
     <td><%= trip.date_start.strftime("%B %d, %Y") %></td>
     <td><%= trip.date_end.strftime("%B %d, %Y") %></td>
-    <td><%= trip.notes %></td>
     <td><%= link_to 'Destroy', user_trip_path(@user, trip), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
