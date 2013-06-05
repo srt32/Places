@@ -1,14 +1,24 @@
 module TourSchedule
 	def self.included(controller)
 		controller.send :helper_method, :matchingTours, 
-						:tourDays, :tripDOW
+						:tourDays, :tripDOW, :convertWDayToDOW
 	end
 
 	def matchingTours(trip,stop)
 		tripDOW = tripDOW(trip)
 		tourDOW = tourDays(stop)
 		overlap = tripDOW & tourDOW
-		overlap.count > 0 ? overlap : "No tours"
+		overlap.count > 0 ? overlap : false
+		matchDOW = convertWDayToDOW(overlap)
+	end
+
+	def convertWDayToDOW(wDayString)
+		days = wDayString
+		dow = []
+		days.each do |d|
+			dow << Date::DAYNAMES[d]
+		end
+		return dow
 	end
 
 	def tourDays(stop)

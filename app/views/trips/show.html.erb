@@ -25,11 +25,8 @@
     <tr>
       <td><h3><%= link_to stop.school.name, school_path(stop.school) %></h3></td>
       <td>
-<!--         tripDOW-<%= tripDOW(@trip) %>
-        tourDOW-<%= tourDays(stop) %> -->
-        match-<%= matchingTours(@trip,stop) %>
+        <%= matchingTours(@trip,stop) %>
       </td>
-
       <td>
         <%= isSchoolOpen(@trip,stop) ? "Open :)" : "Closed :(" %>
       </td>
