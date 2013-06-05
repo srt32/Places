@@ -17,6 +17,7 @@ class SchoolsController < ApplicationController
   # GET /schools/1.json
   def show
     @school = School.find(params[:id])
+    @json = @school.to_gmaps4rails
 
     respond_to do |format|
       format.html # show.html.erb
