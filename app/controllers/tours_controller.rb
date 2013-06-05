@@ -37,6 +37,7 @@ class ToursController < ApplicationController
 
   # GET /tours/1/edit
   def edit
+    @school = School.find(params[:school_id])
     @tour = Tour.find(params[:id])
   end
 
