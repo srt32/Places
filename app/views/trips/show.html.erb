@@ -5,6 +5,12 @@
   <%= button_to 'Edit trip', edit_user_trip_path(@user,@trip), :method => :get %>
 </p>
 
+<% if @trip.date_end < Date.today - 1.day %>
+  <div class="trip-warning">
+    Whoa!  Looks like this trip is in the past.  Maybe try <%= link_to 'updating it.', edit_user_trip_path(@user,@trip) %>
+  </div><br />
+<% end %>
+
 <p>
   <b>Start: </b>
   <%= @trip.date_start.strftime("%B %d, %Y") %>

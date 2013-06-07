@@ -32,3 +32,8 @@ body {
 	font-size: 80px;
 	color: blue;
 }
+
+.trip-warning {
+	font-size: 20px;
+	color: red;
+}
