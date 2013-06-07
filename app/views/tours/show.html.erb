@@ -16,47 +16,47 @@
 </p>
 
 <p>
-  <b>Start time:</b>
-  <%= @tour.start_time %>
+  <b>Start:</b>
+  <%= @tour.start_time.strftime('%l:%M %p') %>
 </p>
 
 <p>
-  <b>End time:</b>
-  <%= @tour.end_time %>
+  <b>End:</b>
+  <%= @tour.end_time.strftime('%l:%M %p') %>
 </p>
 
 <p>
-  <b>M:</b>
+  <b>Mon:</b>
   <%= @tour.m %>
 </p>
 
 <p>
-  <b>T:</b>
+  <b>Tues:</b>
   <%= @tour.t %>
 </p>
 
 <p>
-  <b>W:</b>
+  <b>Wed:</b>
   <%= @tour.w %>
 </p>
 
 <p>
-  <b>R:</b>
+  <b>Thurs:</b>
   <%= @tour.r %>
 </p>
 
 <p>
-  <b>F:</b>
+  <b>Fri:</b>
   <%= @tour.f %>
 </p>
 
 <p>
-  <b>Sa:</b>
+  <b>Sat:</b>
   <%= @tour.sa %>
 </p>
 
 <p>
-  <b>Su:</b>
+  <b>Sun:</b>
   <%= @tour.su %>
 </p>
 
