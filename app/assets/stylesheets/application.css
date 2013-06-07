@@ -23,3 +23,12 @@ body {
 #checkbox {
 	display:inline-block;
 }
+
+.bigNum {
+	font-size: 100px;
+}
+
+.step {
+	font-size: 80px;
+	color: blue;
+}
