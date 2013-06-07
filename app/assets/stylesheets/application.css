@@ -24,13 +24,12 @@ body {
 	display:inline-block;
 }
 
-.bigNum {
-	font-size: 100px;
+.header-main {
+
 }
 
-.step {
-	font-size: 80px;
-	color: blue;
+.header-sub {
+
 }
 
 .trip-warning {
