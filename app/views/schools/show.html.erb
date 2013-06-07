@@ -19,12 +19,7 @@
           <img src="/images/Google-Maps-Logo.png" alt="GMaps logo" width="50" height="50"></a>
 </div>
 
-
 <div class="links" style="clear:both">
-  <div class="schedule-buttons">
-    <%= link_to 'Calendar', school_holidays_path(@school) %> |
-    <%= link_to 'Tour Schedule', school_tours_path(@school) %>
-  </div>
   <div class="nav-links">
     <%= link_to 'Edit', edit_school_path(@school) %> |
     <%= link_to 'Back', schools_path %>
@@ -36,75 +31,9 @@
 </div>
 
 <div class="campus-calendar-index">
-  <h1>Holidays</h1>
-    <table>
-    <tr>
-      <th>School</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Notes</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-
-  <% @holidays.each do |holiday| %>
-    <tr>
-      <td><%= holiday.school_id %></td>
-      <td><%= holiday.start_date %></td>
-      <td><%= holiday.end_date %></td>
-      <td><%= holiday.notes %></td>
-      <td><%= link_to 'Show', school_holiday_path(@school,holiday) %></td>
-      <td><%= link_to 'Edit', edit_school_holiday_path(@school,holiday) %></td>
-      <td><%= link_to 'Destroy', school_holiday_path(@school,holiday), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-  </table>
-  <br />
-  <%= link_to 'New Holiday', new_school_holiday_path(@school) %>
+  <%= render 'holidays/holidays_index' %>
 </div>
 
 <div class="tour-schedule-index">
-  <h1>Tours</h1>
-    <table>
-      <tr>
-        <th>School</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Start time</th>
-        <th>End time</th>
-        <th>M</th>
-        <th>T</th>
-        <th>W</th>
-        <th>R</th>
-        <th>F</th>
-        <th>Sa</th>
-        <th>Su</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-    <% @tours.each do |tour| %>
-      <tr>
-        <td><%= tour.school_id %></td>
-        <td><%= tour.name %></td>
-        <td><%= tour.description %></td>
-        <td><%= tour.start_time %></td>
-        <td><%= tour.end_time %></td>
-        <td><%= tour.m %></td>
-        <td><%= tour.t %></td>
-        <td><%= tour.w %></td>
-        <td><%= tour.r %></td>
-        <td><%= tour.f %></td>
-        <td><%= tour.sa %></td>
-        <td><%= tour.su %></td>
-        <td><%= link_to 'Show', school_tour_path(@school,tour) %></td>
-        <td><%= link_to 'Edit', edit_school_tour_path(@school,tour) %></td>
-        <td><%= link_to 'Destroy', school_tour_path(@school,tour), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    </table>
-    <br />
-    <%= link_to 'New Tour', new_school_tour_path(@school) %>
+  <%= render 'tours/tours_index' %>
 </div>
