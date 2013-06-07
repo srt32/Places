@@ -8,8 +8,7 @@ module TourSchedule
 		tripDOW = tripDOW(trip)
 		tourDOW = tourDays(stop)
 		overlap = tripDOW & tourDOW
-		overlap.count > 0 ? overlap : false
-		matchDOW = convertWDayToDOW(overlap)
+		overlap.count > 0 ? true : false
 	end
 
 	def convertWDayToDOW(wDayString)
