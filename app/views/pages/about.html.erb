@@ -1,16 +1,25 @@
 <%= image_tag('/images/header.png', :alt => "campus header", :width => "1200") %>
 
-<div class="header-text">
-	<div class="header-main">
-		<h1>Your college trip planning, simplified</h1>
+<div class="container header">
+	<div class="row">
+		<div class="span6">
+			<div class="header-text">
+				<div class="header-main">
+					<h1>Your college trip planning, simplified</h1>
+				</div>
+				<div class="header-sub">
+					<h3>Personalized trip planning, from hotels and restaurants to driving directions</h3>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="header-sub">
-		<h3>Personalized trip planning, from hotels and restaurants to driving directions</h3>
+	<div class="row">
+		<div class="span6">
+			<div class="btn btn-large btn-primary">
+				<%= button_to "Start Now (it's free!) »", new_user_registration_path, :method => :get %>
+			</div>
+		</div>
 	</div>
-</div>
-
-<div class="btn btn-large btn-primary">
-	<%= button_to "Start Now (it's free!) »", new_user_registration_path, :method => :get %>
 </div>
 
 <br />
