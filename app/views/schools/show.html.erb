@@ -1,33 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @school.name %>
-</p>
+<div class="school-fields" style="float:left">
+  <p>
+    <h1><%= @school.name %></h1>
+  </p>
 
-<p>
-  <b>Location:</b>
-  <%= @school.location %>
-</p>
+  <p>
+    <h3><%= @school.location %></h3>
+  </p>
 
-<p>
-  <b>Longitude:</b>
-  <%= @school.longitude %>
-</p>
+</div>
 
-<p>
-  <b>Latitude:</b>
-  <%= @school.latitude %>
-</p>
+<div style="float:right">
+  <h2>Planning Tools</h2>
+  <a href=<%= get_yelp_search('Restaurants',@school) %> target="_blank"><img src="/images/yelp_logo.png" alt="Yelp logo" width="66.66" height="50"></a>
+  <a href=<%= get_yelp_search('Hotels',@school) %> target="_blank"><img src="/images/bed_hotel_logo.png" alt="hotel bed" width="55" height="55"></a>
+  <a href=<%= get_gmaps_directions("",@school.name) %> target="_blank">
+          <img src="/images/Google-Maps-Logo.png" alt="GMaps logo" width="50" height="50"></a>
+</div>
 
-<p>
-  <b>Gmaps:</b>
-  <%= @school.gmaps %>
-</p>
 
-<%= link_to 'Calendar', school_holidays_path(@school) %> |
-<%= link_to 'Tour Schedule', school_tours_path(@school) %> |
-<%= link_to 'Edit', edit_school_path(@school) %> |
-<%= link_to 'Back', schools_path %>
+<div class="links" style="clear:both">
+  <div class="schedule-buttons">
+    <%= link_to 'Calendar', school_holidays_path(@school) %> |
+    <%= link_to 'Tour Schedule', school_tours_path(@school) %>
+  </div>
+  <div class="nav-links">
+    <%= link_to 'Edit', edit_school_path(@school) %> |
+    <%= link_to 'Back', schools_path %>
+  </div>
+</div>
 
-<%= gmaps4rails(@json) %>
+<div>
+  <%= gmaps4rails(@json) %>
+</div>
