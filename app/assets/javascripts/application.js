@@ -14,8 +14,11 @@
 //= require bootstrap
 //= require jquery
 //= require jquery_ujs
-//= require gmaps4rails/gmaps4rails.googlemaps
 //= require gmaps4rails/gmaps4rails.base
+//= require gmaps4rails/gmaps4rails.bing
+//= require gmaps4rails/gmaps4rails.googlemaps
+//= require gmaps4rails/gmaps4rails.mapquest
+//= require gmaps4rails/gmaps4rails.openlayers
 //= require_tree .
 
 function remove_fields(link) {
