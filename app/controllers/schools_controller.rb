@@ -2,6 +2,8 @@ class SchoolsController < ApplicationController
   include ControllerYelp
   include TourSchedule
 
+  load_and_authorize_resource
+
   # GET /schools
   # GET /schools.json
   def index

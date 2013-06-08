@@ -4,6 +4,7 @@ gem 'rails', '3.2.11'
 gem 'devise'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'cancan'
 
 group :development, :test do
 	gem 'rspec-rails', '~> 2.0'

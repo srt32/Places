@@ -1,4 +1,6 @@
 class ToursController < ApplicationController
+  load_and_authorize_resource
+  
   # GET /tours
   # GET /tours.json
   def index
