@@ -40,3 +40,7 @@ body {
 #start-now-button {
 	color: white;
 }
+
+.alert {
+	margin-top: 40px;
+}
