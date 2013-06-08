@@ -14,11 +14,11 @@
 //= require bootstrap
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require gmaps4rails/gmaps4rails.googlemaps
 //= require gmaps4rails/gmaps4rails.base
+//= require_tree .
 
-function remove_fields (link) {
+function remove_fields(link) {
 	$(link).prev("input[type=hidden]").val("1");
 	$(link).closest(".fields").hide();
 }
