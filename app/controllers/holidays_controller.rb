@@ -3,7 +3,7 @@ class HolidaysController < ApplicationController
   # GET /holidays.json
   def index
     @school = School.find(params[:school_id])
-    @holidays = @school.holidays.all
+    @holidays = @school.holidays.order("start_date").all
 
     respond_to do |format|
       format.html # index.html.erb

@@ -3,7 +3,7 @@ class ToursController < ApplicationController
   # GET /tours.json
   def index
     @school = School.find(params[:school_id])
-    @tours = @school.tours.all
+    @tours = @school.tours.order("start_time DESC").all
 
     respond_to do |format|
       format.html # index.html.erb
