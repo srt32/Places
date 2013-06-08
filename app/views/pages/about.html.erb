@@ -8,7 +8,7 @@
 					<h1>Your college trips, simplified<h1>
 				</div>
 				<div class="header-sub">
-					<h4>Personalized trip planning, from hotels and restaurant recommendations to driving directions and campus tour schedules</h4>
+					<h4>Personalized trip planning, from hotel and restaurant recommendations to driving directions and campus tour schedules</h4>
 				</div>
 			</div>
 		</div>
@@ -16,7 +16,7 @@
 	<div class="row">
 		<div class="span6">
 			<div class="btn btn-large btn-primary">
-				<%= button_to "Start Now (it's free!) »", new_user_registration_path, :method => :get %>
+				<%= link_to "Start Now (it's free!) »", new_user_registration_path, :id => "start-now-button" %>
 			</div>
 		</div>
 	</div>
@@ -30,14 +30,14 @@
 	        <img src="/images/magGlass.png" alt="Magnifying glass" width="100" height="100">
 	        <h3>Find Schools</h3>
 	        <p>
-	            Find the colleges that fit your strengths and needs. <strong>FREE.</strong>
+	            Find the right colleges for you. <strong>FREE.</strong>
 	        </p>
         </div>
         <div class="span3 subPoint">
                 <img src="/images/calendar.png" alt="Calendar" width="100" height="100">
                 <h3>Schedule Trips</h3>
                 <p>
-                    Find info sessions and campus tour schedules for each school on trip.
+                    Find info sessions and campus tour schedules for each school on your trip.
                 </p>
         </div>
         <div class="span3 subPoint">
