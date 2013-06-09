@@ -16,12 +16,16 @@
     <td><%= holiday.end_date %></td>
     <td><%= holiday.notes %></td>
     <td><%= link_to 'Show', school_holiday_path(@school,holiday) %></td>
-    <td><%= link_to 'Edit', edit_school_holiday_path(@school,holiday) %></td>
-    <td><%= link_to 'Destroy', school_holiday_path(@school,holiday), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if can? :update, @holiday %>
+      <td><%= link_to 'Edit', edit_school_holiday_path(@school,holiday) %></td>
+      <td><%= link_to 'Destroy', school_holiday_path(@school,holiday), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Holiday', new_school_holiday_path(@school) %>
+<% if can? :create, @holiday %>
+  <%= link_to 'New Holiday', new_school_holiday_path(@school) %>
+<% end %>

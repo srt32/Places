@@ -4,22 +4,29 @@
   <tr>
     <th>Name</th>
     <th>Location</th>
-    <th></th>
-    <th></th>
+    <% if can? :update, @school %>
+      <th></th>
+      <th></th>
+    <% end %>
   </tr>
 
 <% @schools.each do |school| %>
   <tr>
     <td><%= link_to school.name, school_path(school) %></td>
     <td><%= school.location %></td>
-    <td><%= link_to 'Edit', edit_school_path(school) %></td>
-    <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    <% if can? :update, @school %>
+      <td><%= link_to 'Edit', edit_school_path(school) %></td>
+      <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New School', new_school_path %>
+<% if can? :create, @school %>
+  <%= link_to 'New School', new_school_path %>
+<% end %>
 
 <%= gmaps4rails(@json) %>

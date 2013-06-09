@@ -32,12 +32,16 @@
     <td><%= tour.sa %></td>
     <td><%= tour.su %></td>
     <td><%= link_to 'Show', school_tour_path(@school,tour) %></td>
-    <td><%= link_to 'Edit', edit_school_tour_path(@school,tour) %></td>
-    <td><%= link_to 'Destroy', school_tour_path(@school,tour), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if can? :update, @tour %>
+        <td><%= link_to 'Edit', edit_school_tour_path(@school,tour) %></td>
+        <td><%= link_to 'Destroy', school_tour_path(@school,tour), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Tour', new_school_tour_path(@school) %>
+<% if can? :create, @tour %>
+    <%= link_to 'New Tour', new_school_tour_path(@school) %>
+<% end %>
