@@ -1,8 +1,6 @@
 Places::Application.routes.draw do
   get "pages/about"
 
-  get "pages/contact"
-
   resources :schools do
     resources :holidays
     resources :tours
