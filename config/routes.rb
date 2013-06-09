@@ -1,4 +1,6 @@
 Places::Application.routes.draw do
+  resources :questions
+
   get "pages/about"
 
   get "pages/contact"
