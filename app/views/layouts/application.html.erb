@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CollegeTripper | Your Guide to College Visits. Plan trips, find tour schedules, and restaurant and hotel recommendations</title>
-  <meta name="description" content="Your Guide to College Visits. Plan trips, find tour schedules, and restaurant and hotel recommendations">
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= stylesheet_link_tag "gmaps4rails" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<%= render 'layouts/ganalytics' %>
-	<%= render 'layouts/navbar' %>	
+	<head>
+	  <title>CollegeTripper | Your Guide to College Visits. Plan trips, find tour schedules, and restaurant and hotel recommendations</title>
+	  <meta name="description" content="Your Guide to College Visits. Plan trips, find tour schedules, and restaurant and hotel recommendations">
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= stylesheet_link_tag "gmaps4rails" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= render 'layouts/ganalytics' %>
+		<%= render 'layouts/navbar' %>	
 
-	<p class="alert"><%= alert %></p>
-	<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+		<p class="notice"><%= notice %></p>
 
-	<%= yield %>
-	<%= yield :scripts %>
-	<%= render 'layouts/footer' %>
-</body>
+		<%= yield %>
+		<%= yield :scripts %>
+		<%= render 'layouts/footer' %>
+		<%= render 'layouts/olark' %>
+	</body>
 </html>
 
