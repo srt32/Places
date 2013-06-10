@@ -6,6 +6,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'cancan'
 gem 'unicorn'
+gem 'figaro'
 
 group :development, :test do
 	gem 'rspec-rails', '~> 2.0'

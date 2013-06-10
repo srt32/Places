@@ -48,6 +48,9 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    figaro (0.6.4)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     geocoder (1.1.6)
     gmaps4rails (1.5.6)
     hike (1.2.2)
@@ -149,6 +152,7 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 3.2.1)
   devise
+  figaro
   geocoder
   gmaps4rails
   jquery-rails
