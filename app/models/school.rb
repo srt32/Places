@@ -1,7 +1,8 @@
 class School < ActiveRecord::Base
   validates :name, :location, :presence => :true
 
-  attr_accessible :gmaps, :latitude, :location, :longitude, :name
+  attr_accessible :gmaps, :latitude, :location, :longitude, :name,
+                    :website, :twitter_handle
   has_many :stops, :dependent => :destroy
   has_many :trips, :through => :stops
   has_many :holidays, :dependent => :destroy

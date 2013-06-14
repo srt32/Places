@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610022922) do
+ActiveRecord::Schema.define(:version => 20130614001421) do
 
   create_table "holidays", :force => true do |t|
     t.integer  "school_id"
@@ -34,9 +34,11 @@ ActiveRecord::Schema.define(:version => 20130610022922) do
     t.string   "location"
     t.float    "longitude"
     t.float    "latitude"
-    t.boolean  "gmaps",      :default => true
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.boolean  "gmaps",          :default => true
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "website"
+    t.string   "twitter_handle"
   end
 
   create_table "stops", :force => true do |t|
