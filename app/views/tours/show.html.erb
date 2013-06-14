@@ -60,6 +60,6 @@
   <%= @tour.su %>
 </p>
 
-
-<%= link_to 'Edit', edit_school_tour_path(@tour) %> |
-<%= link_to 'Back', school_tours_path %>
+<% if can? :update, @tour %>
+  <%= link_to 'Edit', edit_school_tour_path(@tour) %> |
+<% end %>
