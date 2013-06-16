@@ -6,7 +6,17 @@
   </p>
 
   <p>  <!-- Need to put conditional on website -->
-    <h3><%= @school.location %>--<a href=<%= @school.website %>>Website</a></h3>
+    <h3><%= @school.location %></h3></br>
+    <% if @school.try(:website) %>
+      <div class="btn btn-large">
+        <%= link_to "Official Website", @school.website, :target => "_blank", :id => "school-website-button" %>
+      </div>
+    <% end %>
+    <% if @school.try(:twitter_handle) %>
+      <div class="btn btn-large">
+        <%= link_to "Twitter", @school.twitter_handle, :target => "_blank", :id => "school-twitter-button" %>
+      </div></br>
+    <% end %>
   </p>
 
 </div>
