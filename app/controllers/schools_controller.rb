@@ -7,7 +7,7 @@ class SchoolsController < ApplicationController
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.order("name").all
+    @schools = School.order("name").page(params[:page]).per(5)
     @json = @schools.to_gmaps4rails
 
     respond_to do |format|

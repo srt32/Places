@@ -10,6 +10,8 @@
     <% end %>
   </tr>
 
+<%= paginate @schools %>
+
 <% @schools.each do |school| %>
   <tr>
     <td><%= link_to school.name, school_path(school) %></td>
@@ -22,6 +24,8 @@
   </tr>
 <% end %>
 </table>
+
+<%= paginate @schools %>
 
 <br />
 

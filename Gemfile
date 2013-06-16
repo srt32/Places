@@ -7,6 +7,7 @@ gem 'gmaps4rails'
 gem 'cancan'
 gem 'unicorn'
 gem 'figaro'
+gem 'kaminari'
 
 group :development, :test do
 	gem 'rspec-rails', '~> 2.0'
