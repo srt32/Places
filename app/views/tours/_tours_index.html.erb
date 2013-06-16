@@ -1,44 +1,51 @@
 <h1>Tours</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Start</th>
-    <th>End</th>
-    <th>Mon - </th>
-    <th>Tues - </th>
-    <th>Wed - </th>
-    <th>Thurs - </th>
-    <th>Fri - </th>
-    <th>Sat - </th>
-    <th>Sun</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% if @tours.count > 0 %>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Mon - </th>
+        <th>Tues - </th>
+        <th>Wed - </th>
+        <th>Thurs - </th>
+        <th>Fri - </th>
+        <th>Sat - </th>
+        <th>Sun</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
 
-<% @tours.each do |tour| %>
-  <tr>
-    <td><%= tour.name %></td>
-    <td><%= tour.description %></td>
-    <td><%= tour.start_time.strftime('%l:%M %p') %></td>
-    <td><%= tour.end_time.strftime('%l:%M %p') %></td>
-    <td><%= tour.m %></td>
-    <td><%= tour.t %></td>
-    <td><%= tour.w %></td>
-    <td><%= tour.r %></td>
-    <td><%= tour.f %></td>
-    <td><%= tour.sa %></td>
-    <td><%= tour.su %></td>
-    <td><%= link_to 'Show', school_tour_path(@school,tour) %></td>
-    <% if can? :update, @tour %>
-        <td><%= link_to 'Edit', edit_school_tour_path(@school,tour) %></td>
-        <td><%= link_to 'Destroy', school_tour_path(@school,tour), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% @tours.each do |tour| %>
+      <tr>
+        <td><%= tour.name %></td>
+        <td><%= tour.description %></td>
+        <td><%= tour.start_time.strftime('%l:%M %p') %></td>
+        <td><%= tour.end_time.strftime('%l:%M %p') %></td>
+        <td><%= tour.m %></td>
+        <td><%= tour.t %></td>
+        <td><%= tour.w %></td>
+        <td><%= tour.r %></td>
+        <td><%= tour.f %></td>
+        <td><%= tour.sa %></td>
+        <td><%= tour.su %></td>
+        <td><%= link_to 'Show', school_tour_path(@school,tour) %></td>
+        <% if can? :update, @tour %>
+            <td><%= link_to 'Edit', edit_school_tour_path(@school,tour) %></td>
+            <td><%= link_to 'Destroy', school_tour_path(@school,tour), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
     <% end %>
-  </tr>
+    </table>
+<% else %>
+  <h4>
+    Whoops, looks like we don't have any tour schedules for this school.<br /><br />
+    Check out some of the <%= link_to 'other schools', schools_path %> we have.
+  </h4>
 <% end %>
-</table>
 
 <br />
 

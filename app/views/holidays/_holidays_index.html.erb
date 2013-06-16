@@ -1,28 +1,35 @@
 <h1>Holidays</h1>
 
-<table>
-  <tr>
-    <th>Start date</th>
-    <th>End date</th>
-    <th>Notes</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% if @holidays.count > 0 %>
+  <table>
+    <tr>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @holidays.each do |holiday| %>
-  <tr>
-    <td><%= holiday.start_date %></td>
-    <td><%= holiday.end_date %></td>
-    <td><%= holiday.notes %></td>
-    <td><%= link_to 'Show', school_holiday_path(@school,holiday) %></td>
-    <% if can? :update, @holiday %>
-      <td><%= link_to 'Edit', edit_school_holiday_path(@school,holiday) %></td>
-      <td><%= link_to 'Destroy', school_holiday_path(@school,holiday), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
+  <% @holidays.each do |holiday| %>
+    <tr>
+      <td><%= holiday.start_date %></td>
+      <td><%= holiday.end_date %></td>
+      <td><%= holiday.notes %></td>
+      <td><%= link_to 'Show', school_holiday_path(@school,holiday) %></td>
+      <% if can? :update, @holiday %>
+        <td><%= link_to 'Edit', edit_school_holiday_path(@school,holiday) %></td>
+        <td><%= link_to 'Destroy', school_holiday_path(@school,holiday), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+  <h4>
+    Whoops, looks like we don't have any holiday schedules for this school.<br /><br />
+    Check out some of the <%= link_to 'other schools', schools_path %> we have.
+  </h4>
 <% end %>
-</table>
 
 <br />
 
